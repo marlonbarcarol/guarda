@@ -1,0 +1,42 @@
+{
+	"name": "@aweti/guarda",
+	"version": "0.0.1",
+	"description": "A typescript storage solution",
+	"main": "index.js",
+	"types": "types/index.d.ts",
+	"scripts": {
+		"code": "make code.fix",
+		"test": "make test",
+		"build": "make build",
+		"compile": "make compile"
+	},
+	"keywords": [
+		"typescript",
+		"storage"
+	],
+	"author": "Marlon Barcarol",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/aweti/guarda.git"
+	},
+	"bugs": {
+		"url": "https://github.com/aweti/guarda.git/issues"
+	},
+	"homepage": "https://github.com/aweti/guarda#readme",
+	"devDependencies": {
+		"@commitlint/cli": "^16.0.2",
+		"@commitlint/config-conventional": "^16.0.0",
+		"@types/jest": "^27.4.0",
+		"@typescript-eslint/eslint-plugin": "^5.9.1",
+		"eslint": "^8.6.0",
+		"eslint-config-prettier": "^8.3.0",
+		"eslint-formatter-codeframe": "^7.32.1",
+		"eslint-plugin-prettier": "^4.0.0",
+		"husky": "^7.0.4",
+		"jest": "^27.0.1",
+		"prettier": "^2.2.1",
+		"ts-jest": "^27.0.1",
+		"typescript": "^4.1.3"
+	}
+}

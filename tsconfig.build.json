@@ -1,0 +1,17 @@
+{
+	"extends": "./tsconfig.json",
+
+	"compilerOptions": {
+		"noEmit": false,
+
+		"outDir": "./build",
+		"declaration": true,
+		"importHelpers": false,
+		"removeComments": false,
+		"sourceMap": true
+	},
+
+	"include": ["./src"],
+
+	"exclude": ["./*.spec.ts", "./src/**/*.spec.ts", "./build", "./node_modules"]
+}

@@ -1,0 +1,29 @@
+{
+	"compilerOptions": {
+		"target": "esnext",
+		"module": "commonjs",
+		"moduleResolution": "node",
+
+		"types": ["node", "jest"],
+
+		"baseUrl": "./src",
+
+		"allowJs": false,
+		"checkJs": false,
+		"noEmit": true,
+
+		"strict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": false,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"noImplicitAny": true,
+
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"forceConsistentCasingInFileNames": true
+	},
+
+	"include": ["./.eslintrc.*", "./jest.config.js", "./commitlint.config.js", "./src/**/*.ts", "./*.d.ts"],
+	"exclude": ["./node_modules", "./build"]
+}
