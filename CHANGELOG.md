@@ -2,8 +2,10 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-## [0.0.1] - 2021-04-26
+### Initial release 0.0.1 (2022-01-30)
+- Added storage creation from `localStorage/sessionStorage` with `storageOf`.
+- Added storage custom in memory storage `customStorageMaker`.
 
-### Added
+# Changelog
 
-- The ability to export
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
