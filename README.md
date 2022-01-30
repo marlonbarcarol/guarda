@@ -100,7 +100,7 @@ console.log(resourceStorage.has());
 
 console.log(customStorage.length);
 // 2
-console.log(globalThis.localStorage.length);
+console.log('globalThis.localStorage', globalThis.localStorage?.length);
 // 0
 
 // removing resource storage
