@@ -10,11 +10,11 @@ Guarda is a typed storage solution that can be used with `localStorage`, `sessio
 import { storageOf } from '@aweti/guarda';
 
 interface LocalStorage {
-  resource: string;
-  owner: {
-    name: string;
-    token: string;
-  };
+	resource: string;
+	owner: {
+		name: string;
+		token: string;
+	};
 }
 
 // Setting the storage
@@ -24,9 +24,9 @@ const localStorage = storageOf<LocalStorage>(globalThis.localStorage);
 const ownerStorage = localStorage('owner');
 
 ownerStorage.set({
-  // automatically JSON parses storage
-  name: 'The user',
-  token: 'The-user-token',
+	// automatically JSON parses storage
+	name: 'The user',
+	token: 'The-user-token',
 });
 
 console.log(ownerStorage.get()); // automatically JSON parses storage
@@ -64,11 +64,11 @@ console.log(globalThis.localStorage.length);
 import { storageOf, customStorageMaker, SuperStorage } from '@aweti/guarda';
 
 interface CustomStorage {
-  resource: string;
-  owner: {
-    name: string;
-    token: string;
-  };
+	resource: string;
+	owner: {
+		name: string;
+		token: string;
+	};
 }
 
 // Defining a custom in memory storage
@@ -81,8 +81,8 @@ const appStorage = storageOf<CustomStorage>(customStorage);
 const ownerStorage = appStorage('owner');
 
 ownerStorage.set({
-  name: 'The user',
-  token: 'The-user-token',
+	name: 'The user',
+	token: 'The-user-token',
 });
 
 console.log(ownerStorage.get());
