@@ -2,11 +2,9 @@
 	"compilerOptions": {
 		"target": "esnext",
 		"module": "commonjs",
-		"moduleResolution": "node",
+		"moduleResolution": "bundler",
 
 		"types": ["node", "jest"],
-
-		"baseUrl": "./src",
 
 		"allowJs": false,
 		"checkJs": false,
@@ -24,6 +22,6 @@
 		"forceConsistentCasingInFileNames": true
 	},
 
-	"include": ["./.eslintrc.*", "./jest.config.js", "./commitlint.config.js", "./src/**/*.ts", "./*.d.ts"],
+	"include": ["./eslint.config.js", "./jest.config.js", "./commitlint.config.js", "./src/**/*.ts", "./*.d.ts"],
 	"exclude": ["./node_modules", "./build"]
 }

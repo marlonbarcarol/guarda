@@ -73,25 +73,26 @@ export interface SuperStorage<T, U extends Key<T> = Key<T>> extends Storage<T> {
 	storage: Map<U, T[U]>;
 }
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
 const pipeVoid = (...args: unknown[]): void => {};
 
 export const customStorageMaker = <T>(): SuperStorage<T> => {
-	const storage = new Map();
+	const storage = new Map<Key<T>, T[Key<T>]>();
 
 	return {
 		get length(): number {
 			return storage.size;
 		},
 		clear: (): void => storage.clear(),
-		// eslint-disable-next-line @typescript-eslint/no-unsafe-return
-		getItem: <K extends Key<T> = Key<T>>(key: K) => storage.get(key) ?? null,
-		// eslint-disable-next-line @typescript-eslint/no-unsafe-return
+		getItem: (key: Key<T>) => storage.get(key) ?? null,
 		key: (index: number) => Array.from(storage.values())[index] ?? null,
-		removeItem: <K extends Key<T> = Key<T>>(key: K): void => pipeVoid(storage.delete(key)),
-		setItem: <K extends Key<T> = Key<T>>(key: K, value: T[K] | string | null): void =>
-			pipeVoid(storage.set(key, value)),
-		hasItem: (key): boolean => storage.has(key),
+		removeItem: (key: Key<T>): void => pipeVoid(storage.delete(key)),
+		setItem: (key: Key<T>, value: T[Key<T>] | null): void => pipeVoid(storage.set(key, value as T[Key<T>])),
+		hasItem: (key: Key<T>): boolean => storage.has(key),
 		storage,
-	};
+		// `SuperStorage<T>`'s methods carry overloaded generic signatures (one branch keyed by `T`, one
+		// accepting a plain string) that a single runtime implementation backed by one `Map` cannot satisfy
+		// structurally for every instantiation of `K` at once, even though every branch is exercised safely
+		// above with no `any` involved. The public contract is asserted once here instead of scattering
+		// per-property assertions.
+	} as unknown as SuperStorage<T>;
 };
