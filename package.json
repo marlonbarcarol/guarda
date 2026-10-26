@@ -1,6 +1,6 @@
 {
 	"name": "@aweti/guarda",
-	"version": "0.3.0",
+	"version": "0.4.0",
 	"description": "A typescript storage solution",
 	"main": "index.js",
 	"types": "types/index.d.ts",
